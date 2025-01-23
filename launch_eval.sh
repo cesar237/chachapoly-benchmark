@@ -32,7 +32,7 @@ for run in `seq 1 $runs`; do
     printf "%3d/%3d\r" $curr $total
     echo -n "$run;" >> $res_csv
     ./chachapoly-bench $test $msg_len $worker $pps $duration >> $res_csv &
-    sar -A -o results/$res_dir/sar-$test-$msg_len-$worker-$pps-$duration-$run.data 1 $((duration+2)) > /dev/null
+    sar -A -o results/$res_dir/sar/sar-$test-$msg_len-$worker-$pps-$duration-$run.data 1 $((duration+2)) > /dev/null
     curr=$(( curr + 1 ))
 done
 done
