@@ -30,8 +30,8 @@ for pps in $set_pps; do
 for duration in $set_duration; do
 for run in `seq 1 $runs`; do
     printf "%3d/%3d\r" $curr $total
-    echo -n "$run;" >> results.csv
-    # ./chachapoly-bench $test $msg_len $worker $pps $duration >> $res_csv &
+    echo -n "$run;" >> $res_csv
+    ./chachapoly-bench $test $msg_len $worker $pps $duration >> $res_csv &
     curr=$(( curr + 1 ))
 done
 done
