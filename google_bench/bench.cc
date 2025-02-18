@@ -70,15 +70,6 @@ static void BM_Encrypt(benchmark::State& state) {
         encrypt(plaintext, ciphertext, tag, key, nonce);
     }
 }
-BENCHMARK(BM_Encrypt)
-    ->Args({40})
-    ->Args({52})
-    ->Args({100})
-    ->Args({150})
-    ->Args({500})
-    ->Args({1000}) 
-    ->Args({1500})
-    ->Args({2000});
 
 static void BM_Decrypt(benchmark::State& state) {
     std::vector<uint8_t> key(32), nonce(12);
@@ -101,14 +92,33 @@ static void BM_Decrypt(benchmark::State& state) {
         decrypt(ciphertext, decrypted, tag, key, nonce);
     }
 }
+
+BENCHMARK(BM_Encrypt)
+    ->Args({40})
+    ->Args({52})
+    ->Args({100})
+    ->Args({120})
+    ->Args({150})
+    ->Args({500})
+    ->Args({800})
+    ->Args({1000})
+    ->Args({1300}) 
+    ->Args({1500})
+    ->Args({1800})
+    ->Args({2000});
+
 BENCHMARK(BM_Decrypt)
     ->Args({40})
     ->Args({52})
     ->Args({100})
+    ->Args({120})
     ->Args({150})
     ->Args({500})
+    ->Args({800})
     ->Args({1000})
+    ->Args({1300}) 
     ->Args({1500})
+    ->Args({1800})
     ->Args({2000});
 
 // Run the benchmark
