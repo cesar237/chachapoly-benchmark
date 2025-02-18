@@ -27,3 +27,6 @@ go.work.sum
 
 # env file
 .env
+c_bench/chacha20_bench
+google_bench/bench_cc
+notebooks/.ipynb_checkpoints
