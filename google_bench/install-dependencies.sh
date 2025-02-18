@@ -8,3 +8,6 @@ cd dependencies
 git clone --depth=1 https://github.com/google/benchmark.git
 cd benchmark
 cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release
+make -j`nproc`
+make install
+cd ../../
