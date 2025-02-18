@@ -30,3 +30,4 @@ go.work.sum
 c_bench/chacha20_bench
 google_bench/bench_cc
 notebooks/.ipynb_checkpoints
+google_bench/get_results.sh
